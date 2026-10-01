@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${article.title}">Personal Blog</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="blog-box">
+    <!-- Nút quay lại trang chủ -->
+    <div style="margin-bottom: 12px;">
+        <a th:href="@{/home}" style="font-size: 13px; color: #8b95a5; text-decoration: none;">← Home</a>
+    </div>
+
+    <!-- Tiêu đề bài viết -->
+    <h1 style="margin: 0; font-size: 24px; font-weight: 800;" th:text="${article.title}">My first article</h1>
+
+    <!-- Ngày xuất bản (màu xám) -->
+    <div class="sub-date" th:text="${#temporals.format(article.publishedDate, 'MMMM d, yyyy')}">August 7, 2024</div>
+
+    <!-- Nội dung bài viết -->
+    <div style="line-height: 1.6; font-size: 15px; color: #222222; white-space: pre-line;"
+         th:text="${article.content}">
+        Article content goes here...
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${isNew} ? 'New Article' : 'Update Article'">Personal Blog</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="blog-box">
+    <!-- Tiêu đề trang: Update Article hoặc New Article -->
+    <div class="header-row">
+        <h2 th:text="${isNew} ? 'New Article' : 'Update Article'">New Article</h2>
+        <a th:href="@{/admin/dashboard}" style="font-size: 13px; color: #8b95a5; text-decoration: none;">Cancel</a>
+    </div>
+
+    <form th:object="${articleForm}"
+          th:action="${isNew} ? @{/admin/articles} : @{/admin/articles/{id}(id=${articleId})}"
+          method="post">
+
+        <!-- Ô nhập Title -->
+        <div>
+            <input type="text"
+                   class="form-input"
+                   placeholder="Article Title"
+                   th:field="*{title}" />
+            <p style="color: #dc3545; font-size: 12px; margin: -8px 0 10px 0;"
+               th:if="${#fields.hasErrors('title')}"
+               th:errors="*{title}"></p>
+        </div>
+
+        <!-- Ô Publishing Date (hiển thị ngày hiện tại theo mockup) -->
+        <div>
+            <input type="text"
+                   class="form-input"
+                   style="color: #6c757d; background-color: #f1f3f5;"
+                   th:value="${#temporals.format(#temporals.createNow(), 'MMMM d, yyyy')}"
+                   readonly />
+        </div>
+
+        <!-- Ô Content -->
+        <div>
+            <textarea class="form-textarea"
+                      placeholder="Content"
+                      th:field="*{content}"></textarea>
+            <p style="color: #dc3545; font-size: 12px; margin: -10px 0 12px 0;"
+               th:if="${#fields.hasErrors('content')}"
+               th:errors="*{content}"></p>
+        </div>
+
+        <!-- Nút bấm: Publish khi tạo mới, Update khi chỉnh sửa -->
+        <div>
+            <button type="submit"
+                    class="btn-sketch"
+                    th:text="${isNew} ? 'Publish' : 'Update'">Publish</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

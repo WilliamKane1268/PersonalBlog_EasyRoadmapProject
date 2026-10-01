@@ -1,0 +1,135 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Comic Sans MS", cursive, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.blog-box {
+    width: 100%;
+    max-width: 460px;
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 4px 4px 0px #111111;
+    box-sizing: border-box;
+}
+
+/* Header & Title */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-row h1, .header-row h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    color: #111111;
+}
+
+.sub-date {
+    color: #8b95a5;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 4px;
+    margin-bottom: 18px;
+}
+
+/* Item List */
+.article-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.article-row-title {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 700;
+    font-size: 15px;
+    max-width: 65%;
+    word-break: break-word;
+}
+
+.article-row-title:hover {
+    text-decoration: underline;
+}
+
+.article-row-date {
+    color: #8b95a5;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Admin actions */
+.admin-actions a, .admin-actions button {
+    color: #8b95a5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.admin-actions a:hover, .admin-actions button:hover {
+    color: #111111;
+    text-decoration: underline;
+}
+
+/* Form inputs */
+.form-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    border: 2px solid #111111;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    outline: none;
+    background: #fff;
+}
+
+.form-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 2px solid #111111;
+    border-radius: 8px;
+    font-size: 14px;
+    min-height: 240px;
+    margin-bottom: 16px;
+    outline: none;
+    resize: vertical;
+}
+
+/* Buttons */
+.btn-sketch {
+    background: #ffffff;
+    border: 2px solid #111111;
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: #111111;
+    display: inline-block;
+    box-shadow: 2px 2px 0px #111111;
+}
+
+.btn-sketch:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
